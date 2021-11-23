@@ -1,4 +1,4 @@
-{% set version = '0.1.5' %}
+{% set version = "0.1.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/symengine_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/symengine/symengine_{{ version }}.tar.gz
-  sha256: d46c4489d04ddd00f7542ab554c0fe3b706ef40740e16108d2ca4927bfea0fd9
+  sha256: 22fec3007392698e9cf5fc21d8f8758a354b91f39208b788428d2f07f9d8a481
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -56,10 +56,7 @@ test:
 about:
   home: https://github.com/symengine/symengine.R
   license: GPL-2.0-or-later
-  summary: Provides an R interface to 'SymEngine' <https://github.com/symengine/>, a standalone
-    'C++' library for fast symbolic manipulation. The package has functionalities for
-    symbolic computation like calculating exact mathematical expressions, solving systems
-    of linear equations and code generation.
+  summary: Provides an R interface to 'SymEngine' <https://github.com/symengine/>, a standalone 'C++' library for fast symbolic manipulation. The package has functionalities for symbolic computation like calculating exact mathematical expressions, solving systems of linear equations and code generation.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
