@@ -1,4 +1,4 @@
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/symengine_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/symengine/symengine_{{ version }}.tar.gz
-  sha256: bac26eb70349d0c2c8bdb97351875c6aef79c7bca0d51541e46a11d782fef672
+  sha256: 10373e0ad703d6d26de9f6e9c96bc4df2eb4e16a33f58f208dca1e8160ef48d7
 
 build:
   merge_build_host: true  # [win]
