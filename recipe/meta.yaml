@@ -36,6 +36,7 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - {{ posix }}which             # [win]
     - cmake
   host:
     - gmp         # [unix]
