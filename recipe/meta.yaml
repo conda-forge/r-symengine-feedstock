@@ -12,7 +12,6 @@ source:
   sha256: 897f2878690d6aec35ce45bc61f1a1c2c3e08a71b62364821e8969cad6688fef
 
 build:
-  skip: true  # [r_base == "4.1"]
   number: 1
   rpaths:
     - lib/R/lib/
@@ -40,9 +39,10 @@ requirements:
     - cmake
   host:
     - gmp         # [unix]
-    - mpfr        # [unix]
-    - mpc         # [unix]
-    - symengine   # [unix]
+    - mpir        # [win]
+    - mpfr
+    - mpc
+    - symengine
     - r-base
     - r-rcpp
   run:
