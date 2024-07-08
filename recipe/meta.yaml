@@ -42,7 +42,7 @@ requirements:
     - mpir        # [win]
     - mpfr
     - mpc
-    - symengine
+    - symengine 0.11.*
     - r-base
     - r-rcpp
   run:
