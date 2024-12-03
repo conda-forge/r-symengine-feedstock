@@ -42,7 +42,7 @@ requirements:
     - mpfr
     - mpc
     - libflint
-    - winpthreads-devel
+    - winpthreads-devel  # [win]
     - symengine
     - r-base
     - r-rcpp
