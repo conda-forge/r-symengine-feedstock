@@ -38,17 +38,17 @@ requirements:
     - {{ posix }}which             # [win]
     - cmake
   host:
-    - gmp         # [unix]
-    - mpir        # [win]
+    - gmp
     - mpfr
     - mpc
-    - symengine 0.12.*
+    - libflint
+    - winpthreads-devel
+    - symengine
     - r-base
     - r-rcpp
   run:
     - r-base
     - r-rcpp
-    - {{ pin_compatible("symengine", max_pin="x.x") }}   # [unix]
 
 test:
   commands:
