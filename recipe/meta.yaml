@@ -43,7 +43,7 @@ requirements:
     - mpc
     - libflint
     - winpthreads-devel  # [win]
-    - symengine
+    - symengine >=0.13.0
     - r-base
     - r-rcpp
   run:
