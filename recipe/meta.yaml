@@ -49,6 +49,8 @@ requirements:
   run:
     - r-base
     - r-rcpp
+    # TODO: remove when run_exports PR is merged
+    - {{ pin_compatible("symengine", max_pin="x.x") }}
 
 test:
   commands:
