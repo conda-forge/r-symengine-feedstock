@@ -1,6 +1,5 @@
 {% set version = "0.2.6" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-symengine
@@ -13,9 +12,7 @@ source:
   sha256: 897f2878690d6aec35ce45bc61f1a1c2c3e08a71b62364821e8969cad6688fef
 
 build:
-  merge_build_host: true  # [win]
-  skip: true  # [r_base == "4.1"]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -23,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -36,18 +35,22 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - {{ posix }}which             # [win]
     - cmake
   host:
-    - gmp         # [unix]
-    - mpfr        # [unix]
-    - mpc         # [unix]
-    - symengine   # [unix]
+    - gmp
+    - mpfr
+    - mpc
+    - libflint
+    - winpthreads-devel  # [win]
+    - symengine >=0.13.0
     - r-base
     - r-rcpp
   run:
     - r-base
     - r-rcpp
-    - {{ pin_compatible("symengine", max_pin="x.x") }}   # [unix]
+    # TODO: remove when run_exports PR is merged
+    - {{ pin_compatible("symengine", max_pin="x.x") }}
 
 test:
   commands:
