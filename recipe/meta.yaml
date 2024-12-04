@@ -12,7 +12,7 @@ source:
   sha256: 897f2878690d6aec35ce45bc61f1a1c2c3e08a71b62364821e8969cad6688fef
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -42,15 +42,12 @@ requirements:
     - mpfr
     - mpc
     - libflint
-    - winpthreads-devel  # [win]
     - symengine >=0.13.0
     - r-base
     - r-rcpp
   run:
     - r-base
     - r-rcpp
-    # TODO: remove when run_exports PR is merged
-    - {{ pin_compatible("symengine", max_pin="x.x") }}
 
 test:
   commands:
