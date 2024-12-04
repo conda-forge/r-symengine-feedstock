@@ -42,15 +42,12 @@ requirements:
     - mpfr
     - mpc
     - libflint
-    - winpthreads-devel  # [win]
     - symengine >=0.13.0
     - r-base
     - r-rcpp
   run:
     - r-base
     - r-rcpp
-    # TODO: remove when run_exports PR is merged
-    - {{ pin_compatible("symengine", max_pin="x.x") }}
 
 test:
   commands:
