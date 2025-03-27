@@ -10,6 +10,8 @@ source:
     - {{ cran_mirror }}/src/contrib/symengine_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/symengine/symengine_{{ version }}.tar.gz
   sha256: 897f2878690d6aec35ce45bc61f1a1c2c3e08a71b62364821e8969cad6688fef
+  patches:
+    - rbinding.diff
 
 build:
   number: 3

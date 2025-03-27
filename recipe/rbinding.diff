@@ -1,0 +1,21 @@
+--- src/rbinding.cpp	2025-03-27 16:28:19.642755543 -0500
++++ src/rbinding.cpp	2025-03-27 16:28:38.745443634 -0500
+@@ -10,18 +10,6 @@
+ 
+ #include <symengine/cwrapper.h>
+ #include "rbinding.h"
+-#include <symengine/basic.h>
+-
+-// Copied from symengine/cwrapper.cpp
+-struct CRCPBasic {
+-    SymEngine::RCP<const SymEngine::Basic> m;
+-};
+-
+-static_assert(sizeof(CRCPBasic) == sizeof(CRCPBasic_C),
+-              "Size of 'basic' is not correct");
+-static_assert(std::alignment_of<CRCPBasic>::value
+-                  == std::alignment_of<CRCPBasic_C>::value,
+-                      "Alignment of 'basic' is not correct");
+ 
+ // Some cwrapper helpers ///////////
+ 
