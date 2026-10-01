@@ -1,4 +1,4 @@
-{% set version = "0.2.13" %}
+{% set version = "0.2.14" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/symengine_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/symengine/symengine_{{ version }}.tar.gz
-  sha256: 183f2890aed64f0e52e436d8f9a6034cb223c233d0570be1d11a427e81df668e
+  sha256: 3d22b22807e030f0183ec34e0f182035050941654b27c5e3ede3cc77ebddd048
   patches:
     - rbinding.diff
 
